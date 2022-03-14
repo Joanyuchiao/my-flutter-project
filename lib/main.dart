@@ -6,21 +6,31 @@ void main() {
 
 var appTitle=Text('我的第一個Flutter App'),
     hiFlutter = Text(
-      'hi,Flutter.',
-      style:TextStyle(fontSize:50),
+      'hi,Flutter.\n今天是20220308',
+      style:TextStyle(fontSize:30,color:Colors.blue,fontWeight: FontWeight.bold,decoration: TextDecoration.lineThrough),
     );
 
+//var img =Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/330px-Cat_November_2010-1a.jpg');
+var appBody=Container(
 
-var appBody=Center(
   child:hiFlutter,
+   alignment: Alignment.topRight,
+  margin: EdgeInsets.all(50),
+ color: Colors.white,
+ padding: EdgeInsets.fromLTRB(50, 50, 50, 50),
+
+ //child:img
+
 );
 var appBar=AppBar(
   title:appTitle,
+  backgroundColor:Color(0xFFFFEBEE),
 );
 var app =MaterialApp(
   home:Scaffold(
     appBar: appBar,
     body: appBody,
+      backgroundColor:Color(0xFFFFCDD2)
   ),
 
 );
