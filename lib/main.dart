@@ -3,37 +3,41 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 
 void main() {
+  var appTitle = Text('我的第一個Flutter App'),
+      hiFlutter = Text(
+        'hi,Flutter.\n今天是20220308',
+        style: TextStyle(
+            fontSize: 30,
+            color: Colors.blue,
+            fontWeight: FontWeight.bold,
+            decoration: TextDecoration.lineThrough),
+      );
 
-var appTitle=Text('我的第一個Flutter App'),
-    hiFlutter = Text(
-      'hi,Flutter.\n今天是20220308',
-      style:TextStyle(fontSize:30,color:Colors.blue,fontWeight: FontWeight.bold,decoration: TextDecoration.lineThrough),
-    );
+var img =Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/330px-Cat_November_2010-1a.jpg');
+  var appBody = Column(
+    children: const <Widget>[
+      Text('Deliver features faster'),
+      Text('Craft beautiful UIs'),
+      Expanded(
+        child: FittedBox(
+          fit: BoxFit.contain, // otherwise the logo will be tiny
+          child: FlutterLogo(),
+        ),
+      ),
+    ],
 
-//var img =Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/330px-Cat_November_2010-1a.jpg');
-var appBody=Container(
 
-  child:hiFlutter,
-   alignment: Alignment.topRight,
-  margin: EdgeInsets.all(50),
- color: Colors.white,
- padding: EdgeInsets.fromLTRB(50, 50, 50, 50),
 
- //child:img
-
-);
-var appBar=AppBar(
-  title:appTitle,
-  backgroundColor:Color(0xFFFFEBEE),
-);
-var app =MaterialApp(
-  home:Scaffold(
-    appBar: appBar,
-    body: appBody,
-      backgroundColor:Color(0xFFFFCDD2)
-  ),
-
-);
+    //child:img
+  );
+  var appBar = AppBar(
+    title: appTitle,
+    backgroundColor: Color(0xFFFFEBEE),
+  );
+  var app = MaterialApp(
+    home: Scaffold(
+        appBar: appBar, body: appBody, backgroundColor: Color(0xFFFFCDD2)),
+  );
   runApp(app);
 }
 
